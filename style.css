@@ -1,5 +1,5 @@
 .inpu {
-    width: 200px !important;
+    width: 230px !important;
 }
 
 .sel {
@@ -52,7 +52,9 @@ img {
 }
 
 p {
-    margin: 5px;
+    /* text-align: right; */
+    text-align: justify;
+    margin: 5px !important;
     width: 300px;
 }
 
@@ -67,3 +69,20 @@ nav {
     top: 0 !important;
     z-index: 1;
 }
+
+h6 {
+    margin: 5px;
+}
+
+a {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+/* nav .navv {
+    display: flex !important;
+    justify-content: center !important;
+} */
