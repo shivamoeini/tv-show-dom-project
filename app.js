@@ -1,6 +1,6 @@
 const row = document.querySelector(".contier");
 const select = document.querySelector("select")
-let search = document.querySelector("input")
+
 const res = document.querySelector(".result")
 
 
@@ -106,26 +106,18 @@ const fechmove = async() => {
         card.append(a)
 
         // selector
-        // selector
+
         let selc = `<option value="${move.name}">${move.name}-S${season}E${number}</option>`
         select.innerHTML += selc
 
-        // search
-        // search.addEventListener("keyup", function(e) => {
-        //     const resu = e.target.value.toLowerCase()
-        //     console.log(resu);
-        // })
+
     }
-    // search.addEventListener("keydown", (e) => {
-    //     const deta = data.filter((mov) => mov.name.includes(e.target.value))
-    //     console.log(deta);
-    // });
-    // mov.body.includes(e.target.value)
+
 }
 fechmove();
 
 
-
+// search
 
 document.getElementById('searchInput').onkeyup = function() {
     let input = this.value.toLowerCase();

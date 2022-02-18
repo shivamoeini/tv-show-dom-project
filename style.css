@@ -1,15 +1,16 @@
 .inpu {
-    width: 230px !important;
+    width: 240px !important;
 }
 
 .sel {
-    width: 200px !important;
+    width: 240px !important;
 }
 
 .a {
+    text-decoration: none;
     /* font-family: fantasy!important; */
     font-size: 30px !important;
-    -webkit-text-stroke: 1px red;
+    -webkit-text-stroke: 2px red;
 }
 
 footer {
