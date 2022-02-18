@@ -1,4 +1,8 @@
 const row = document.querySelector(".contier");
+const select = document.querySelector("select")
+let search = document.querySelector("input")
+const res = document.querySelector(".result")
+
 
 // function loadjson() {
 //     fetch("https://api.tvmaze.com/shows/82/episodes")
@@ -61,7 +65,7 @@ const row = document.querySelector(".contier");
 
 const url = "https://api.tvmaze.com/shows/82/episodes";
 const fechmove = async() => {
-    const res = await axios.get(url);
+    const res = await axios.get(url, );
     const data = res.data;
     for (const move of data) {
         // card
@@ -98,8 +102,62 @@ const fechmove = async() => {
         const a = document.createElement("a")
         a.textContent = "more information..."
         a.setAttribute("href", url)
-        console.log(url);
+            // console.log(url);
         card.append(a)
+
+        // selector
+        // selector
+        let selc = `<option value="${move.name}">${move.name}-S${season}E${number}</option>`
+        select.innerHTML += selc
+
+        // search
+        // search.addEventListener("keyup", function(e) => {
+        //     const resu = e.target.value.toLowerCase()
+        //     console.log(resu);
+        // })
     }
-};
+    // search.addEventListener("keydown", (e) => {
+    //     const deta = data.filter((mov) => mov.name.includes(e.target.value))
+    //     console.log(deta);
+    // });
+    // mov.body.includes(e.target.value)
+}
 fechmove();
+
+
+
+
+document.getElementById('searchInput').onkeyup = function() {
+    let input = this.value.toLowerCase();
+    search_episode(input);
+}
+
+document.getElementById('episodesDropdown').onchange = function() {
+    let value = this.options[this.selectedIndex].value.toLowerCase();
+
+    if (value === 'all') {
+        show_all_episodes();
+    } else {
+        search_episode(value);
+    }
+}
+
+function search_episode(query) {
+    let elements = document.querySelectorAll('.card h5');
+
+    for (i = 0; i < elements.length; i++) {
+        if (!elements[i].innerHTML.toLowerCase().includes(query)) {
+            elements[i].parentElement.style.display = "none";
+        } else {
+            elements[i].parentElement.style.display = "flex";
+        }
+    }
+}
+
+function show_all_episodes() {
+    let elements = document.querySelectorAll('.card h5');
+
+    for (i = 0; i < elements.length; i++) {
+        elements[i].parentElement.style.display = "flex";
+    }
+}
