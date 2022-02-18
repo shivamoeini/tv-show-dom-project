@@ -1,6 +1,6 @@
 const row = document.querySelector(".contier");
 const select = document.querySelector("select")
-
+let search = document.querySelector("input")
 const res = document.querySelector(".result")
 
 
@@ -112,12 +112,11 @@ const fechmove = async() => {
 
 
     }
-
 }
 fechmove();
 
 
-// search
+// serach
 
 document.getElementById('searchInput').onkeyup = function() {
     let input = this.value.toLowerCase();

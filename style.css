@@ -40,6 +40,13 @@ img {
     margin: 10px;
 }
 
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+    box-shadow: 2px 3px 10px 5px rgb(226, 226, 226);
+    ;
+}
+
 p {
     /* text-align: right; */
     text-align: justify;
